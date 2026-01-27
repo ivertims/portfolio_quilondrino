@@ -6,6 +6,7 @@ import AboutSection from "./components/AboutSection";
 import ServicesSection from "./components/ServicesSection";
 import PortfolioSection from "./components/PortfolioSection";
 import ContactsSection from "./components/ContactsSection";
+import Image from "next/image";
 
 // Particle Network Background Component
 function ParticleNetwork() {
@@ -129,7 +130,7 @@ export default function Home() {
     { name: "ABOUT", id: "about" },
     { name: "SERVICES", id: "services" },
     { name: "PORTFOLIO", id: "portfolio" },
-    { name: "CONTACTS", id: "contacts" },
+    { name: "CONTACT", id: "contacts" },
   ];
 
   const socialLinks = [
@@ -164,13 +165,16 @@ export default function Home() {
             {/* Logo/Name with Profile Picture */}
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-slate-200 dark:border-slate-700">
-                <img
+                <Image
                   src="/images/pic2.png"
                   alt="Profile"
                   className="w-full h-full object-cover"
+                  width={40}
+                  height={40}
+                  priority
                 />
               </div>
-              <span className="font-bold text-slate-900 dark:text-white tracking-wide">
+              <span className="text-white tracking-wide">
                 IVER QUILONDRINO
               </span>
             </div>
@@ -247,11 +251,14 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            <img
+            <Image
               src="/images/profilepic.png"
               alt="Profile Full View"
               className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl"
+              width={800}
+              height={900}
               onClick={(e) => e.stopPropagation()}
+              priority
             />
           </div>
         </div>
